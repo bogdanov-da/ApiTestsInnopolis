@@ -1,9 +1,12 @@
 package petstore;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.Objects;
 import java.util.Random;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     private Long id;
     private String username;
@@ -57,6 +60,7 @@ public class User {
         return userStatus;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -69,5 +73,13 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", userStatus=" + userStatus +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return userStatus == user.userStatus && Objects.equals(username, user.username) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email) && Objects.equals(password, user.password) && Objects.equals(phone, user.phone);
     }
 }
