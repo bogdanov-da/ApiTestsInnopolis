@@ -10,15 +10,7 @@ import java.util.Properties;
 public class TestHelper {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
-    public static String getProperty(String key) {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileReader("D:\\git-repo\\innopolis\\ApiTestsInnopolis\\src\\test\\resources\\application.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return properties.getProperty(key);
-    }
+
 
     public static Object getObject(HttpResponse httpResponse, Class clazz) {
         try {

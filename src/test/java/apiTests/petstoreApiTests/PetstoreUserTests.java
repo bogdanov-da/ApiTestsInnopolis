@@ -1,6 +1,6 @@
 package apiTests.petstoreApiTests;
 
-import client.RestAssuredClient;
+import client.rest.RestAssuredClient;
 import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

@@ -1,4 +1,4 @@
-package client;
+package client.rest;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;

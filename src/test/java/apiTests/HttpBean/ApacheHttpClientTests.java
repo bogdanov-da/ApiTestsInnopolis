@@ -1,7 +1,7 @@
 package apiTests.HttpBean;
 
 import apiTests.TestHelper;
-import client.ApacheHttpClient;
+import client.rest.ApacheHttpClient;
 import httpBean.HttpBeanPojo;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -14,12 +14,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import utils.PropertyLoader;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.List;
 public class ApacheHttpClientTests {
 
     private ApacheHttpClient client = new ApacheHttpClient();
-    private final static String BASE_URL = TestHelper.getProperty("httpBeanBaseUrl");
+    private final static String BASE_URL = PropertyLoader.getProperty("httpBeanBaseUrl");
     private HttpClient httpClient;
 
     @Test
