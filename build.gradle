@@ -22,6 +22,7 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
     compile 'io.gsonfire:gson-fire:1.8.2'
     implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.6.Final'
+    implementation group: 'org.mongodb', name:'mongo-java-driver', version: '3.12.8'
 }
 
 test {

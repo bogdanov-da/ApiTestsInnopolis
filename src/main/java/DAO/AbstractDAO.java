@@ -47,6 +47,7 @@ public abstract class AbstractDAO<T extends Serializable> {
         session = openSession();
         int index = Integer.parseInt(session.createQuery("select max(id) from " + clazz.getName()).getSingleResult().toString());
         session.close();
+        System.out.println(index);
         return index;
     }
 
